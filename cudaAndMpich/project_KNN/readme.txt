@@ -1,0 +1,10 @@
+serial.cpp  //串行的KNN代码
+serial.sh  //串行KNN代码编译运行shell程序
+parallel.cu  //并行的KNN代码
+parallel.sh  //并行KNN的编译运行shell程序
+banana.txt  //banana训练集
+banana_test.txt  //banana测试集
+newthyroif.txt  //甲状腺训练集
+thy_text.txt  //甲状腺测试集
+ring.txt  //ring训练集
+ring_test.txt  //ring测试集

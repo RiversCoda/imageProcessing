@@ -1,0 +1,1 @@
+nvcc -I/usr/local/include/opencv-3.4.0 -L/usr/localb -lopencv_core -lopencv_imgcodecs -L/usrb/debug/opt/rh/devtoolset-8/root/usrb/gcc/x86_64-redhat-linux/8/ --gpu-architecture=sm_37 -std=c++11 rgb_gpu.cu -o gpuRgb 

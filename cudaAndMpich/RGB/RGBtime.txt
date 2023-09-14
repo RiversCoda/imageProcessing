@@ -1,0 +1,4 @@
+test.jpg_cpu_output_copy.jpg 用时： 14.9208 ms
+gpu_output.jpg 用时： 8 ms
+gpu_output.jpg 用时： 9 ms
+test.jpg_cpu_output.jpg 用时： 363.749 ms
