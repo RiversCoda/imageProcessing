@@ -87,8 +87,13 @@ def bicubic_resize(image, fx, fy):
 
     return resized
 
-image = cv2.imread('digitalImageProcessing\ch02\insert\input.png')
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert from BGR to RGB for visualization with plt
+image_raw = cv2.imread('digitalImageProcessing\ch02\insert\input.png')
+image_raw = cv2.cvtColor(image_raw, cv2.COLOR_BGR2RGB)  # Convert from BGR to RGB for visualization with plt
+
+# 将图像缩小一半
+image = cv2.resize(image_raw, (0, 0), fx=0.5, fy=0.5)
+
+# 分别使用三种插值法进行图像放大
 
 resized_nn = nearest_neighbor_resize(image, 2, 2)
 resized_bilinear = bilinear_resize(image, 2, 2)
@@ -109,3 +114,10 @@ plt.imshow(resized_bicubic)
 plt.title('Bicubic')
 
 plt.show()
+
+# 分别存储三幅图像和1/2图像
+plt.imsave('digitalImageProcessing\ch02\insert\input_half.png', image)
+plt.imsave('digitalImageProcessing\ch02\insert\output_nn.png', resized_nn)
+plt.imsave('digitalImageProcessing\ch02\insert\output_bilinear.png', resized_bilinear)
+plt.imsave('digitalImageProcessing\ch02\insert\output_bicubic.png', resized_bicubic)
+
