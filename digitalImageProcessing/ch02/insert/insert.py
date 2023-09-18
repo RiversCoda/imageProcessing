@@ -10,8 +10,8 @@ def nearest_neighbor_resize(image, fx, fy):
 
     for y in range(new_height):
         for x in range(new_width):
-            iy = min(int(y / fy), height - 1)
-            ix = min(int(x / fx), width - 1)
+            iy = int(y / fy)
+            ix = int(x / fx)
             resized[y, x] = image[iy, ix]
 
     return resized
@@ -35,13 +35,13 @@ def bilinear_resize(image, fx, fy):
 
             a = i - i0
             b = j - j0
-
+            # 按距离加权求值
             resized[y, x] = (1 - a) * (1 - b) * image[i0, j0] + a * (1 - b) * image[i1, j0] + (1 - a) * b * image[i0, j1] + a * b * image[i1, j1]
 
     return resized
 
 def cubic_interpolation(p0, p1, p2, p3, t):
-    p0, p1, p2, p3 = float(p0), float(p1), float(p2), float(p3) # Convert to float
+    p0, p1, p2, p3 = float(p0), float(p1), float(p2), float(p3)
 
     a0 = p3 - p2 - p0 + p1
     a1 = p0 - p1 - a0
